@@ -25,7 +25,7 @@ if uploaded_files:
     if file_extension == ".csv":
         data_frame = pd.read_csv(file )
     elif file_extension == ".xlsx":
-        data_frame = pd.read_excel(file, index_col=0 )
+        data_frame = pd.read_excel(file)
     else:
         sl.error(
             f"Invalid File Uploaded {file_extension}. Please either upload a CSV file or Excel file."
