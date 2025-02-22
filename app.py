@@ -78,7 +78,7 @@ if uploaded_files:
 
     buffer.seek(0)
     sl.download_button(
-        label=f"Get {file_name} as {convert_to}",
+        label=f"Get {file_name} as {convert_to} :",
         mime=mime_type,
         data=buffer,
         file_name=file_name,
