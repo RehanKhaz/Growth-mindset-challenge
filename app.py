@@ -3,6 +3,7 @@ import pandas as pd
 import os
 from io import BytesIO
 
+
 sl.set_page_config(
     page_title="🐱‍👓 Data Sweeper",
     page_icon="🔥",
@@ -24,7 +25,7 @@ if uploaded_files:
     if file_extension == ".csv":
         data_frame = pd.read_csv(file)
     elif file_extension == ".xlsx":
-        data_frame = pd.read_excel(file , engine='openpyxl')
+        data_frame = pd.read_excel(file )
     else:
         sl.error(
             f"Invalid File Uploaded {file_extension}. Please either upload a CSV file or Excel file."
@@ -72,7 +73,7 @@ if uploaded_files:
         file_name = file.name.replace(file_extension, ".csv")
         mime_type = "text/csv"
     elif convert_to == "Excel":
-        data_frame.to_excel(buffer, index=False, engine="openpyxl")
+        data_frame.to_excel(buffer, index=False)
         file_name = file.name.replace(file_extension, ".xlsx")
         mime_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 
