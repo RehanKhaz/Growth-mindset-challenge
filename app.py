@@ -2,7 +2,7 @@ import streamlit as sl
 import pandas as pd
 import os
 from io import BytesIO
-
+import openpyxl
 
 sl.set_page_config(
     page_title="🐱‍👓 Data Sweeper",
@@ -23,7 +23,7 @@ if uploaded_files:
     file = uploaded_files
     file_extension = os.path.splitext(file.name)[-1].lower()
     if file_extension == ".csv":
-        data_frame = pd.read_csv(file )
+        data_frame = pd.read_csv(file , engine='openpyxl' )
     elif file_extension == ".xlsx":
         data_frame = pd.read_excel(file , engine="openpyxl")
     else:
